@@ -1,5 +1,4 @@
 const { Client, Events, GatewayIntentBits, Partials } = require('discord.js');
-const config = require('./config.json');
 const { cachePartial } = require('./lib');
 const { generalErrorHandler } = require('./errorHandlers');
 const fs = require('fs');
@@ -84,4 +83,4 @@ client.once(Events.ClientReady, async () => {
   console.info(`Connected to Discord. Active in ${client.guilds.cache.size} guilds.`);
 });
 
-client.login(config.token);
+client.login(process.env.TOKEN);
